@@ -1,0 +1,138 @@
+panel:
+  auto-pop: true
+  fullscreen: false
+monitor:
+  auto-pop: false
+  fullscreen: true
+# users:
+#   admin: "1234"
+service:
+  host: "localhost"
+  port: "80"
+log:
+  dir: "logs/"
+  level: "trace" # panic/fatal/error/warn/info/debug/trace
+serial:
+  name: "COM5"
+  baud: 9600
+  size: 8 # Default 8
+  parity: "N" # N:None(default)/O:Odd/E:Even/M:Mark/S:Space
+  stop-bits: 1 # Default is 1
+  timeout: 1000 # Millisecond
+affair:
+  interval-for: 0 # Millisecond
+  interval-answer: 10 # Millisecond
+modbus:
+aim:
+  address: 1
+  interval-for: 100 # Millisecond
+dio:
+  address: 2
+vfd:
+  address: 3
+sensors:
+  t:
+    channel: 0
+    min: -10.0
+    min-offset: 0.0
+    max: 50.0
+    max-offset: 0.0
+  f:
+    channel: 1
+    min: 0.0
+    min-offset: 0.0
+    max: 6.361
+    max-offset: 0.0
+  p:
+    channel: 2
+    min: 0.0
+    min-offset: 0.0
+    max: 600.0
+    max-offset: 0.0
+  dp2:
+    channel: 3
+    min: 0.0
+    min-offset: 0.0
+    max: 500.0
+    max-offset: 0.0
+  dp1:
+    channel: 4
+    min: 0.0
+    min-offset: 0.0
+    max: 500.0
+    max-offset: 0.0
+prv:
+  close-symbol: 1
+  open-symbol: 2
+  stop-symbol: 0
+  time-open: 12000 # Millisecond
+  time-close: 12000 # Millisecond
+pump:
+airout:
+  interval-for: 1000 # Millisecond
+  pump-max: 20
+  air-out-pressure: 10.0 # kPa
+  pressure-ready: 50.0 # kPa
+keep:
+  interval-for: 1000 # Millisecond
+  pressure-dn: 40.0 # kPa
+  pressure-up: 60.0 # kPa
+watch:
+  interval-for: 1000 # 每次间隔 Millisecond
+  temperature-min: 5.0 # ℃，测试介质为 5℃~40℃ 的清水
+  temperature-max: 40.0 # ℃
+  temperature-offset: 3.0 # ℃，测试过程中温度变化低于 ±3℃
+  pressure-min: 35.0 # kPa，测试过程中剩余压力不低于 35kPa
+  pressure-max: 500.0 # kPa
+control:
+  dp:
+    interval-for: 1000 # Millisecond
+    allowable-offset: 0.01 # 允许的绝对偏差 allowable absolute offset
+    pid:
+      reversed: false
+      kp: 1.0
+      ki: 1.0
+      kd: 1.0
+      out-min: 0.0
+      out-max: 100.0
+      err-sum-max: 5.0
+  dp1:
+    interval-for: 1000 # Millisecond
+    allowable-offset: 0.01 # 允许的绝对偏差 allowable absolute offset
+    pid:
+      reversed: false
+      kp: 1.0
+      ki: 1.0
+      kd: 1.0
+      out-min: 0.0
+      out-max: 100.0
+      err-sum-max: 5.0
+  f:
+    interval-for: 1000 # Millisecond
+    allowable-offset: 0.01 # 允许的绝对偏差 allowable absolute offset
+    pid:
+      reversed: false
+      kp: 1.0
+      ki: 1.0
+      kd: 1.0
+      out-min: 0.0
+      out-max: 100.0
+      err-sum-max: 5.0
+measure:
+  interval-for: 5000 # 每次间隔 Millisecond
+  times: 10 # 测量次数
+trial:
+  timeout-prepare: 60000 # Millisecond
+  timeout-cancel: 30000 # Millisecond
+  timeout-stop: 30000 # Millisecond
+  timeout-start: 60000 # Millisecond
+file:
+datas:
+  dir: "datas/"
+result:
+  dir: "results/"
+analyse:
+  confidence-probability: 0.95 # 置信概率
+  error-dp1: 0.275 # 仪表误差
+  error-dp2: 0.275 # 仪表误差
+  error-f: 0.01 # 仪表误差

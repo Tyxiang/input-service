@@ -1,0 +1,7 @@
+service:
+  host: "localhost"
+  port: "80"
+  cors: true
+log:
+  dir: "logs/"
+  level: "trace" # panic/fatal/error/warn/info/debug/trace
